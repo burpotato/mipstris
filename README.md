@@ -76,7 +76,7 @@ There were some features of Tetris that I was unable to implement. These are
    - Scans for the lowest valid position underneath the block using **checkok**, and draws a grey block there using **drawblock** 
 - **holdpiece**: swaps the held piece with the current one
    - if there is no held piece, returns a randomly generated one (This will only happen on the first hold of the game)
-   - ignore the draw and generation by jumping to [ready](#ready)
+   - ignore the draw and generation by jumping to [ready](#ready-sets-the-starting-position-of-the-piece)
 - **drawscore**: erases and draws the score
    - Draws numbers by accessing an array of numbers and another array of "segments"
    - Each number is made up of 3 "segments," which are 5 bit values that represent a "draw" or a "empty" value.
