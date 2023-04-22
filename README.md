@@ -99,7 +99,7 @@ and so is represented by three segments:
 # | # | #
 ```
 which are then translated to `11111, 10101, 10111`, or `31, 21, 23`
-an array `numberframes` holds every segment needed for the 0-9
+an array `numberframes` holds every segment needed for the digits 0-9
 
 `numberframes: {1,4,16,17,21,23,28,29,31}`
 
