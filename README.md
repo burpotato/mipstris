@@ -108,10 +108,9 @@ so the value of 6 in the code is `{8,4,5}`
 ### Main Loop (in order)
 
 #### **newpiece**: first locks in the previous piece, runs clearlines, then generates a random piece
-
+- locks in the piece by just drawing it - [ready](#ready-sets-the-starting-position-of-the-piece) resets the position so it doesn't erase the block after it gets drawn
 #### **ready**: sets the starting position of the piece
 - holding a piece jumps here instead - it starts the loop again without clearing lines or generating a random piece.
-
 #### **loop**: this is the main loop.
 1. checks if the block should move down a space - it only moves every few frames. This allows the player to input more than one input before the blocks moves down a space.
     - **If the block should move:**
@@ -123,13 +122,14 @@ so the value of 6 in the code is `{8,4,5}`
     - **If the block should not move**
       - iterate the movement checker by one.
 2. delays the code, so it isn't erased immediately.
-3. checks for input
+    - this designates the framerate. (50fps)
+4. checks for input
     - if there is input, erase the block and the indicator and jump to the corresponding input
       - the indicator is only erased here, because the block moving down should not change the indicator.
     - otherwise, jump to [loop](#loop-this-is-the-main-loop)
     - in all of the input code, run [checkok](#subroutines) before the movement goes through
-      - if checkok returns a failure, then rollback the movement, and jump back to [loop](#loop)
-      - otherwise, [draw the indicator and the block.](#subroutines) 
+      - if checkok returns a failure, then rollback the movement, and jump back to [loop](#loop-this-is-the-main-loop)
+      - otherwise, [draw the indicator and the block.](#subroutines), and then jump back to [loop](#loop-this-is-the-main-loop)
 
 ## Notes
 - Don't spam inputs too fast! The game runs pretty well, but too many inputs can still overload the system and crash it.
