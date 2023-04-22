@@ -134,4 +134,4 @@ so the value of 6 in the code is `{8,4,5}`
 ## Notes
 - Don't spam inputs too fast! The game runs pretty well, but too many inputs can still overload the system and crash it.
 - The game does still run faster on more powerful computers - and vice versa.
-- miditest is a program that just plays the tetris music. It's not used anymore, but I really like it so I'm including it here anyways
+- [miditest](/miditest.asm) is a program that just plays the tetris music. It's not used anymore, but I really like it so I'm including it here anyways
